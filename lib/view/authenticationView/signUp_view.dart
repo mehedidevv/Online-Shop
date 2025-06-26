@@ -6,13 +6,10 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:shop_app/res/custom_style/custom_size.dart';
 import 'package:shop_app/res/custom_widget/RoundTextField.dart';
 import 'package:shop_app/res/custom_widget/customAppBar_widget.dart';
-import 'package:shop_app/res/custom_widget/customCheckBox_widget.dart';
 import 'package:shop_app/res/custom_widget/custom_button.dart';
 import 'package:shop_app/res/custom_widget/custom_text.dart';
 import 'package:shop_app/view/authenticationView/signUpVerifyView.dart';
-
 import '../../res/app_images/App_images.dart';
-import '../../res/custom_widget/customToggleCheckBox.dart';
 import 'controller/signUp_controller.dart';
 
 class SignUpView extends StatelessWidget {
@@ -43,7 +40,7 @@ class SignUpView extends StatelessWidget {
                   ),
                 ),
             
-                heightBox30,
+                heightBox10,
                 CustomText(
                     title: 'Sign Up',
                     fontSize: 24,
@@ -51,7 +48,7 @@ class SignUpView extends StatelessWidget {
                     color: Color(0XFF010101)
                 ),
             
-                heightBox30,
+                heightBox20,
                 CustomText(
                     title: 'Full Name',
                     fontSize: 16,

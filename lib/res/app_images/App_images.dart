@@ -9,9 +9,19 @@ class AppImages {
 
 
 
+
   // =================================Home icons=============================================
-
-
+  static String newsFeedIcon = "assets/images/newsFeedIcon.png";
+  static String addIcon = "assets/images/addIcon.png";
+  static String locationIcon = "assets/images/locationIcon.png";
+  static String notification = "assets/images/notification.png";
+  static String profile = "assets/images/profile.png";
+  static String profileImage = "assets/images/profileImage.png";
+  static String hertIcon = "assets/images/hertIcon.png";
+  static String addidasShop = "assets/images/addidasShop.png";
+  static String nike = "assets/images/nike.png";
+  static String zara = "assets/images/zara.png";
+  static String CardImage = "assets/images/CardImage.png";
 
 
 
