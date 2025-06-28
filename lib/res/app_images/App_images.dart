@@ -6,6 +6,7 @@ class AppImages {
   static String keyIcon = "assets/images/keyIcon.png";
   static String apple = "assets/images/apple.png";
   static String googleIcon = "assets/images/googleIcon.png";
+  static String location = "assets/images/location.png";
 
 
 
@@ -22,6 +23,9 @@ class AppImages {
   static String nike = "assets/images/nike.png";
   static String zara = "assets/images/zara.png";
   static String CardImage = "assets/images/CardImage.png";
+  static String mapBg = "assets/images/mapBg.png";
+  static String shop = "assets/images/shop.png";
+  static String locationIndicator = "assets/images/locationIndicator.png";
 
 
 

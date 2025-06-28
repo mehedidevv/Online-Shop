@@ -45,5 +45,17 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+
+	<!-- Location Permission -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>We need access to your location to provide nearby services or shops.</string>
+
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>We need access to your location even when the app is in the background for providing nearby services or shops.</string>
+
+
+
+
+
 </dict>
 </plist>

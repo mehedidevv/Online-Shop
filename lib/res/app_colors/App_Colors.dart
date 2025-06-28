@@ -9,6 +9,7 @@ class AppColors {
   static const whiteColor = Color(0xFFFFFFFF);
   static const blackColor = Color(0xFF000000);
   static const mainTextColor = Color(0xFF010101);
+  static const appBarTextColor = Color(0xFF824902);
 
   // ✅ Reusable Linear Gradient
   static const LinearGradient primaryGradient = LinearGradient(
