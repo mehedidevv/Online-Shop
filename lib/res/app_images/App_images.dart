@@ -26,6 +26,8 @@ class AppImages {
   static String mapBg = "assets/images/mapBg.png";
   static String shop = "assets/images/shop.png";
   static String locationIndicator = "assets/images/locationIndicator.png";
+  static String exclametory = "assets/images/exclametory.png";
+  static String share = "assets/images/share.png";
 
 
 

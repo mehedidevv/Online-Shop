@@ -13,6 +13,7 @@ import 'package:shop_app/res/custom_widget/custom_text.dart';
 import 'package:shop_app/view/homeView/view/feedView/filter_view.dart';
 import '../../controller/likeButtonController.dart';
 import '../../widget/nearByShoop_widget.dart';
+import '../../widget/recommendedBrandCard_widget.dart';
 import '../../widget/recommendedCard_widget.dart';
 
 class FeedView extends StatelessWidget {
@@ -140,12 +141,12 @@ class FeedView extends StatelessWidget {
 
                 // Search Bar
                 RoundTextField(
-                  vertical_padding: 20.h,
+                  vertical_padding: 10.h,
                   borderColor: AppColors.primaryDeep,
                   fillColor: AppColors.whiteColor,
                   borderWidth: 1,
                   hint: 'Search',
-                  maxLine: 2,
+                  maxLine: 1,
                   borderRadius: 25.r,
                   focusBorderRadius: 25.r,
                   prefixIcon: Icon(
@@ -153,7 +154,7 @@ class FeedView extends StatelessWidget {
                     color: Color(0xFF4A4A4A),
                   ),
                 ),
-                heightBox20,
+
 
 
                 CustomText(
@@ -251,8 +252,37 @@ class FeedView extends StatelessWidget {
                     ),
         
                   ],
-                )
-        
+                ),
+
+                heightBox20,
+
+                RecommendedBrandCardWidget(),
+
+                heightBox20,
+
+                RecommendedBrandCardWidget(),
+
+
+                heightBox20,
+
+                RecommendedBrandCardWidget(),
+
+
+                heightBox20,
+
+                RecommendedBrandCardWidget(),
+
+
+                heightBox20,
+
+                RecommendedBrandCardWidget(),
+
+
+                heightBox20,
+
+                RecommendedBrandCardWidget(),
+
+                heightBox20,
         
               ],
             ),
@@ -262,3 +292,4 @@ class FeedView extends StatelessWidget {
     );
   }
 }
+
