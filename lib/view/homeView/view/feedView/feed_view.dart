@@ -7,10 +7,10 @@ import 'package:shop_app/res/app_colors/App_Colors.dart';
 import 'package:shop_app/res/app_images/App_images.dart';
 import 'package:shop_app/res/custom_style/custom_size.dart';
 import 'package:shop_app/res/custom_widget/RoundTextField.dart';
-import 'package:shop_app/res/custom_widget/customAppBar_widget.dart';
-import 'package:shop_app/res/custom_widget/custom_button.dart';
 import 'package:shop_app/res/custom_widget/custom_text.dart';
 import 'package:shop_app/view/homeView/view/feedView/filter_view.dart';
+import '../../../../res/custom_widget/alertDialog_widget.dart';
+import '../../../../res/helper/sharedHelper.dart';
 import '../../controller/likeButtonController.dart';
 import '../../widget/nearByShoop_widget.dart';
 import '../../widget/recommendedBrandCard_widget.dart';
@@ -20,9 +20,7 @@ class FeedView extends StatelessWidget {
   FeedView({super.key});
 
   final controller = Get.put(HeartController());
-  bool isLiked = false;
 
-  // Dummy data list for NearBy Shop
   final List<Map<String, String>> shopList = [
     {'image': AppImages.addidasShop, 'name': 'Adidas'},
     {'image': AppImages.nike, 'name': 'Nike'},
@@ -34,7 +32,6 @@ class FeedView extends StatelessWidget {
     {'image': AppImages.zara, 'name': 'LM10'},
   ];
 
-  // Dummy data list for Recommended Cards
   final List<Map<String, String>> recommendedList = [
     {
       'title': 'Discover unique finds at Nordstrom',
@@ -68,12 +65,13 @@ class FeedView extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 12.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Profile And Name Text
+                // Profile
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -92,7 +90,7 @@ class FeedView extends StatelessWidget {
                               fontSize: 16.sp,
                               fontFamily: 'Poppins',
                               fontWeight: FontWeight.w600,
-                              color: Color(0xFF333333),
+                              color: const Color(0xFF333333),
                             ),
                             SizedBox(height: 2.h),
                             CustomText(
@@ -100,46 +98,38 @@ class FeedView extends StatelessWidget {
                               fontSize: 10.sp,
                               fontFamily: 'Poppins',
                               fontWeight: FontWeight.w400,
-                              color: Color(0xFF1E1E1E).withOpacity(0.8),
+                              color: const Color(0xFF1E1E1E).withOpacity(0.8),
                             ),
                           ],
                         ),
                       ],
                     ),
-                    // Heart Icon With Toggle
-                    Obx(
-                          () => GestureDetector(
-                        onTap: controller.toggleLike,
-                        child: Container(
-                          height: 30.h,
-                          width: 30.h,
-                          decoration: BoxDecoration(
-                            color: controller.isLiked.value
-                                ? AppColors.primaryDeep
-                                : Colors.transparent,
-                            shape: BoxShape.circle,
-                          ),
-                          padding: EdgeInsets.all(4.w),
-                          child: SizedBox(
-                            height: 25.h,
-                            width: 25.h,
-                            child: Image.asset(
-                              AppImages.hertIcon,
-                              fit: BoxFit.contain,
-                              color: controller.isLiked.value
-                                  ? AppColors.whiteColor
-                                  : AppColors.primaryDeep,
-                            ),
-                          ),
+                    Obx(() => GestureDetector(
+                      onTap: controller.toggleLike,
+                      child: Container(
+                        height: 30.h,
+                        width: 30.h,
+                        decoration: BoxDecoration(
+                          color: controller.isLiked.value
+                              ? AppColors.primaryDeep
+                              : Colors.transparent,
+                          shape: BoxShape.circle,
+                        ),
+                        padding: EdgeInsets.all(4.w),
+                        child: Image.asset(
+                          AppImages.hertIcon,
+                          color: controller.isLiked.value
+                              ? AppColors.whiteColor
+                              : AppColors.primaryDeep,
                         ),
                       ),
-                    ),
+                    )),
                   ],
                 ),
+
                 heightBox20,
 
-
-                // Search Bar
+                // Search
                 RoundTextField(
                   vertical_padding: 10.h,
                   borderColor: AppColors.primaryDeep,
@@ -149,14 +139,12 @@ class FeedView extends StatelessWidget {
                   maxLine: 1,
                   borderRadius: 25.r,
                   focusBorderRadius: 25.r,
-                  prefixIcon: Icon(
-                    Icons.search_outlined,
-                    color: Color(0xFF4A4A4A),
-                  ),
+                  prefixIcon: Icon(Icons.search_outlined, color: Color(0xFF4A4A4A)),
                 ),
 
+                heightBox20,
 
-
+                // Nearby Shops
                 CustomText(
                   title: 'Show nearby stores !',
                   fontSize: 16.sp,
@@ -164,7 +152,7 @@ class FeedView extends StatelessWidget {
                   color: AppColors.mainTextColor,
                 ),
                 heightBox10,
-                // Near By Shop List
+
                 SizedBox(
                   height: 90.h,
                   child: ListView.builder(
@@ -173,7 +161,7 @@ class FeedView extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final shop = shopList[index];
                       return Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 8.0.w),
+                        padding: EdgeInsets.symmetric(horizontal: 8.w),
                         child: NearByShopWidget(
                           shopImage: shop['image']!,
                           shopName: shop['name']!,
@@ -182,18 +170,19 @@ class FeedView extends StatelessWidget {
                     },
                   ),
                 ),
-                heightBox10,
 
+                heightBox20,
 
-                // Recommended Cards
+                // Recommended Horizontal Cards
                 CustomText(
                   title: 'Recommended for you',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.mainTextColor,
                 ),
+
                 heightBox10,
-                //Recommended Cards
+
                 SizedBox(
                   height: 180.h,
                   child: ListView.builder(
@@ -213,11 +202,10 @@ class FeedView extends StatelessWidget {
                     },
                   ),
                 ),
+
                 heightBox20,
 
-
-
-                //Row For Explore Unique Brands and Items!
+                // Explore Brands Row
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -227,9 +215,8 @@ class FeedView extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       color: AppColors.mainTextColor,
                     ),
-        
                     GestureDetector(
-                      onTap: ()=>Get.to(FilterView()),
+                      onTap: () => Get.to(FilterView()),
                       child: Container(
                         height: 30,
                         width: 30,
@@ -237,7 +224,8 @@ class FeedView extends StatelessWidget {
                           color: const Color(0xFFFAF4EC),
                           shape: BoxShape.circle,
                           border: Border.all(
-                              color: AppColors.primaryDeep,width: 0.35
+                            color: AppColors.primaryDeep,
+                            width: 0.35,
                           ),
                         ),
                         child: Center(
@@ -250,40 +238,60 @@ class FeedView extends StatelessWidget {
                         ),
                       ),
                     ),
-        
                   ],
                 ),
 
                 heightBox20,
 
-                RecommendedBrandCardWidget(),
+                // Recommended Brand Cards
+                ListView.builder(
+                  itemCount: 10,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: EdgeInsets.only(bottom: 10.h),
+                      child: RecommendedBrandCardWidget(
+
+                        onExclamatoryTap: () {
+                          showDialog(
+                            context: context,
+                            barrierDismissible: false,
+                            builder: (_) =>
+                                CustomCenterDialog(
+                                  title: 'What do you want to report?',
+                                  subTitle: 'Report Reason',
+                                  textFieldHint: 'Type  here...',
+                                  buttonText: 'Submit',
+                                  onButtonTap: () => Navigator.pop(context),
+                                ),
+                          );
+                        },
+
+                        onShareTap: () {
+                          ShareHelper.shareCardData(
+                            title: 'Proenza Schouler',
+                            description: 'T-Shirts & Long Pants',
+                            category: 'Dress',
+                            color: 'Black',
+                            store: 'T J Maxx',
+                            size: 'Small',
+                            price: '\$55.55',
+                            imageAssetPath: AppImages.CardImage,
+                          );
+                        },
+                        onLikeTap: () => print('Like tapped on card $index'),
+                        onCouldntFindTap: () => print('Couldn’t Find tapped on card $index'),
+                        onBroughtTap: () => print('Brought tapped on card $index'),
+
+
+
+                      ),
+                    );
+                  },
+                ),
 
                 heightBox20,
-
-                RecommendedBrandCardWidget(),
-
-
-                heightBox20,
-
-                RecommendedBrandCardWidget(),
-
-
-                heightBox20,
-
-                RecommendedBrandCardWidget(),
-
-
-                heightBox20,
-
-                RecommendedBrandCardWidget(),
-
-
-                heightBox20,
-
-                RecommendedBrandCardWidget(),
-
-                heightBox20,
-        
               ],
             ),
           ),
@@ -292,4 +300,5 @@ class FeedView extends StatelessWidget {
     );
   }
 }
+
 

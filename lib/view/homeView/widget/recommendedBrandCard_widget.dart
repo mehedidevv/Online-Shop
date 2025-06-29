@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../res/app_colors/App_Colors.dart';
 import '../../../res/app_images/App_images.dart';
 import '../../../res/custom_style/custom_size.dart';
 import '../../../res/custom_widget/custom_text.dart';
 
 class RecommendedBrandCardWidget extends StatelessWidget {
-  const RecommendedBrandCardWidget({super.key});
+  final VoidCallback? onExclamatoryTap;
+  final VoidCallback? onShareTap;
+  final VoidCallback? onLikeTap;
+  final VoidCallback? onCouldntFindTap;
+  final VoidCallback? onBroughtTap;
+
+  const RecommendedBrandCardWidget({
+    super.key,
+    this.onExclamatoryTap,
+    this.onShareTap,
+    this.onLikeTap,
+    this.onCouldntFindTap,
+    this.onBroughtTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +38,7 @@ class RecommendedBrandCardWidget extends StatelessWidget {
           ),
         ],
       ),
-      child: IntrinsicHeight( // Makes both sides match vertically
+      child: IntrinsicHeight(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -57,10 +69,9 @@ class RecommendedBrandCardWidget extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
                 child: Column(
-                  mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Title & Icons Row
+                    // Title & Icons
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -75,9 +86,9 @@ class RecommendedBrandCardWidget extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            _circleIcon(AppImages.exclametory),
+                            _circleIcon(AppImages.exclametory, onTap: onExclamatoryTap),
                             widthBox5,
-                            _circleIcon(AppImages.share),
+                            _circleIcon(AppImages.share, onTap: onShareTap),
                           ],
                         ),
                       ],
@@ -85,7 +96,6 @@ class RecommendedBrandCardWidget extends StatelessWidget {
 
                     heightBox5,
 
-                    // Star Rating
                     Row(
                       children: [
                         const Icon(Icons.star, color: Color(0XFFF4B208), size: 16),
@@ -104,17 +114,16 @@ class RecommendedBrandCardWidget extends StatelessWidget {
                     heightBox5,
                     _infoRow('Brand:', 'Proenza Schouler'),
                     heightBox5,
-                Row(
-                  children: [
-                    Expanded(child: _infoRow('Category:', 'Dress')),
-                    widthBox10,
-                    Expanded(child: _infoRow('Color:', 'Black')),
-                  ],),
+                    Row(
+                      children: [
+                        Expanded(child: _infoRow('Category:', 'Dress')),
+                        widthBox10,
+                        Expanded(child: _infoRow('Color:', 'Black')),
+                      ],
+                    ),
                     heightBox5,
                     _infoRow('Stores:', 'T J Maxx'),
                     heightBox5,
-
-                    // Size & Price Row
                     Row(
                       children: [
                         Expanded(child: _infoRow('Size:', 'Small')),
@@ -123,18 +132,18 @@ class RecommendedBrandCardWidget extends StatelessWidget {
                       ],
                     ),
 
-                    heightBox10,
 
-                    // Bottom Buttons
+                    // Action Buttons
                     Row(
                       children: [
-                        _actionButton('Like'),
+                        _actionButton('Like', onTap: onLikeTap),
                         widthBox5,
-                        _actionButton('Couldn’t Find', fontSize: 9.sp),
+                        _actionButton('Couldn’t Find', fontSize: 9.sp, onTap: onCouldntFindTap),
                         widthBox5,
-                        _actionButton('Brought', fontSize: 9.sp),
+                        _actionButton('Brought', fontSize: 9.sp, onTap: onBroughtTap),
                       ],
                     ),
+
                   ],
                 ),
               ),
@@ -145,13 +154,13 @@ class RecommendedBrandCardWidget extends StatelessWidget {
     );
   }
 
-  // Circle Icon Widget
-  Widget _circleIcon(String assetPath) {
+  // Circle Icon
+  Widget _circleIcon(String assetPath, {VoidCallback? onTap}) {
     return GestureDetector(
-      onTap: () => print('icon tapped'),
+      onTap: onTap,
       child: Container(
-        height: 30,
-        width: 30,
+        height: 30.h,
+        width: 30.w,
         decoration: BoxDecoration(
           color: const Color(0xFFFAF4EC),
           shape: BoxShape.circle,
@@ -160,8 +169,8 @@ class RecommendedBrandCardWidget extends StatelessWidget {
         child: Center(
           child: Image.asset(
             assetPath,
-            height: 24,
-            width: 24,
+            height: 20.h,
+            width: 20.w,
             color: AppColors.primaryDeep,
           ),
         ),
@@ -169,7 +178,7 @@ class RecommendedBrandCardWidget extends StatelessWidget {
     );
   }
 
-  // Info Row Widget
+  // Info Row
   Widget _infoRow(String label, String value) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -197,11 +206,11 @@ class RecommendedBrandCardWidget extends StatelessWidget {
     );
   }
 
-  // Action Button Widget
-  Widget _actionButton(String text, {double? fontSize}) {
+  // Action Button
+  Widget _actionButton(String text, {double? fontSize, VoidCallback? onTap}) {
     return Expanded(
       child: GestureDetector(
-        onTap: () {},
+        onTap: onTap,
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 6.h),
           decoration: BoxDecoration(
@@ -226,3 +235,4 @@ class RecommendedBrandCardWidget extends StatelessWidget {
     );
   }
 }
+
