@@ -1,11 +1,11 @@
 
 import 'package:flutter/material.dart';
-import 'package:shop_app/view/homeView/view/addView/add_view.dart';
-import 'package:shop_app/view/homeView/view/feedView/feed_view.dart';
-import 'package:shop_app/view/homeView/view/locationView/location_view.dart';
-import 'package:shop_app/view/homeView/view/profileView/profile_view.dart';
-import '../../../res/custom_widget/customBottomNavBar_widget.dart';
-import 'notificationView/notification_view.dart';
+import 'package:shop_app/view/profileView/profile_view.dart';
+import '../res/custom_widget/customBottomNavBar_widget.dart';
+import 'addView/add_view.dart';
+import 'feedView/feed_view.dart';
+import 'locationView/view/location_view.dart';
+import 'notificationView/view/notification_view.dart';
 
 
 

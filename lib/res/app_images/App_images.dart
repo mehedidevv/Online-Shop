@@ -28,6 +28,20 @@ class AppImages {
   static String locationIndicator = "assets/images/locationIndicator.png";
   static String exclametory = "assets/images/exclametory.png";
   static String share = "assets/images/share.png";
+  static String nearShopImage = "assets/images/nearShopImage.png";
+  static String timerIcon = "assets/images/timerIcon.png";
+  static String nearStors = "assets/images/nearStors.png";
+
+
+  // =================================Location icons=============================================
+  static String clothing = "assets/images/clothing.png";
+  static String accesories = "assets/images/accesories.png";
+  static String shoes = "assets/images/shoes.png";
+  static String hoodies = "assets/images/hoodies.png";
+  static String mostPopular1 = "assets/images/mostPopular1.png";
+  static String redHeart = "assets/images/redHeart.png";
+  static String mostPopular2 = "assets/images/mostPopular2.png";
+  static String mostPopular3 = "assets/images/mostPopular3.png";
 
 
 

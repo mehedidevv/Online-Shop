@@ -9,7 +9,7 @@ import 'package:shop_app/res/custom_widget/custom_button.dart';
 import 'package:shop_app/res/custom_widget/custom_text.dart';
 import '../../../../res/custom_style/custom_size.dart';
 import '../../../../res/custom_widget/customAppBar_widget.dart';
-import '../../widget/bottomSheet_widget.dart';
+import '../widget/bottomSheet_widget.dart';
 
 // ---------------------- CONTROLLER ----------------------
 class FilterController extends GetxController {

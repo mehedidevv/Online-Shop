@@ -10,7 +10,7 @@ import 'package:shop_app/res/custom_widget/custom_button.dart';
 import 'package:shop_app/res/custom_widget/custom_text.dart';
 import 'package:shop_app/view/authenticationView/forgetPasasword_view.dart';
 import 'package:shop_app/view/authenticationView/signUp_view.dart';
-import 'package:shop_app/view/homeView/view/homeDashboard_view.dart';
+import 'package:shop_app/view/homeDashboard_view.dart';
 
 import '../../res/app_images/App_images.dart';
 import '../../res/custom_widget/customToggleCheckBox.dart';

@@ -67,31 +67,34 @@ class RecommendedBrandCardWidget extends StatelessWidget {
             Expanded(
               flex: 3,
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 0.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // Title & Icons
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: CustomText(
-                            title: 'Proenza Schouler',
-                            fontSize: 14.sp,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.appBarTextColor,
+                    Padding(
+                      padding: EdgeInsets.only(top: 10.h),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: CustomText(
+                              title: 'Proenza Schouler',
+                              fontSize: 14.sp,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.appBarTextColor,
+                            ),
                           ),
-                        ),
-                        Row(
-                          children: [
-                            _circleIcon(AppImages.exclametory, onTap: onExclamatoryTap),
-                            widthBox5,
-                            _circleIcon(AppImages.share, onTap: onShareTap),
-                          ],
-                        ),
-                      ],
+                          Row(
+                            children: [
+                              _circleIcon(AppImages.exclametory, onTap: onExclamatoryTap),
+                              widthBox5,
+                              _circleIcon(AppImages.share, onTap: onShareTap),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
 
                     heightBox5,

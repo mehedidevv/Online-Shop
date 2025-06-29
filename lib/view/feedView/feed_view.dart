@@ -8,13 +8,13 @@ import 'package:shop_app/res/app_images/App_images.dart';
 import 'package:shop_app/res/custom_style/custom_size.dart';
 import 'package:shop_app/res/custom_widget/RoundTextField.dart';
 import 'package:shop_app/res/custom_widget/custom_text.dart';
-import 'package:shop_app/view/homeView/view/feedView/filter_view.dart';
 import '../../../../res/custom_widget/alertDialog_widget.dart';
 import '../../../../res/helper/sharedHelper.dart';
-import '../../controller/likeButtonController.dart';
-import '../../widget/nearByShoop_widget.dart';
-import '../../widget/recommendedBrandCard_widget.dart';
-import '../../widget/recommendedCard_widget.dart';
+import '../controller/likeButtonController.dart';
+import '../widget/nearByShoop_widget.dart';
+import '../widget/recommendedBrandCard_widget.dart';
+import '../widget/recommendedCard_widget.dart';
+import 'filter_view.dart';
 
 class FeedView extends StatelessWidget {
   FeedView({super.key});
