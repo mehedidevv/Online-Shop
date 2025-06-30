@@ -199,8 +199,8 @@ class SignInView extends StatelessWidget {
                   children: [
               
                     Container(
-                      width: 80,
-                      height: 80,
+                      width: 50,
+                      height: 50,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: const Color(0xFFFAF6F1), // Light cream background
@@ -226,8 +226,8 @@ class SignInView extends StatelessWidget {
                           blendMode: BlendMode.srcIn,
                           child: Image.asset(
                             AppImages.apple,
-                            width: 40,
-                            height: 40,
+                            width: 30,
+                            height: 30,
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -237,8 +237,8 @@ class SignInView extends StatelessWidget {
                     widthBox20,
               
                     Container(
-                      width: 80,
-                      height: 80,
+                      width: 50,
+                      height: 50,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: const Color(0xFFFAF6F1), // Light cream background
@@ -264,8 +264,8 @@ class SignInView extends StatelessWidget {
                           blendMode: BlendMode.srcIn,
                           child: Image.asset(
                             AppImages.googleIcon,
-                            width: 40,
-                            height: 40,
+                            width: 30,
+                            height: 30,
                             fit: BoxFit.contain,
                           ),
                         ),

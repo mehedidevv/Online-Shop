@@ -7,6 +7,7 @@ import 'package:shop_app/res/custom_style/custom_size.dart';
 import '../../../../../res/app_images/App_images.dart';
 import '../../../../../res/custom_widget/custom_text.dart';
 
+import '../../widget/animatedProduct_widget.dart';
 import '../../widget/mostPopular_widget.dart';
 import '../../widget/nearByShoop_widget.dart';
 import '../../widget/newProduct_widget.dart';
@@ -95,6 +96,62 @@ class WomenCategoryWidget extends StatelessWidget {
      },
    ];
 
+   final List<Map<String, dynamic>> newProducts = [
+     {
+       'imagePath': AppImages.summer2,
+       'brandName': 'Nike',
+       'productName': 'Air Zoom Pegasus',
+       'price': '\$120',
+       'discountPrice': '\$90',
+       'rating': 4.5,
+       'ratingCount': 25,
+     },
+     {
+       'imagePath': AppImages.product,
+       'brandName': 'Adidas',
+       'productName': 'Ultraboost 22',
+       'price': '\$150',
+       'discountPrice': '\$110',
+       'rating': 4.8,
+       'ratingCount': 30,
+     },
+     {
+       'imagePath': AppImages.summerProduct,
+       'brandName': 'Puma',
+       'productName': 'Velocity Nitro',
+       'price': '\$100',
+       'discountPrice': '\$75',
+       'rating': 4.2,
+       'ratingCount': 18,
+     },
+     {
+       'imagePath': AppImages.product,
+       'brandName': 'Nike',
+       'productName': 'Air Zoom Pegasus',
+       'price': '\$120',
+       'discountPrice': '\$90',
+       'rating': 4.5,
+       'ratingCount': 25,
+     },
+     {
+       'imagePath': AppImages.summerProduct,
+       'brandName': 'Adidas',
+       'productName': 'Ultraboost 22',
+       'price': '\$150',
+       'discountPrice': '\$110',
+       'rating': 4.8,
+       'ratingCount': 30,
+     },
+     {
+       'imagePath': AppImages.summer2,
+       'brandName': 'Puma',
+       'productName': 'Velocity Nitro',
+       'price': '\$100',
+       'discountPrice': '\$75',
+       'rating': 4.2,
+       'ratingCount': 18,
+     },
+   ];
 
 
    @override
@@ -117,11 +174,14 @@ class WomenCategoryWidget extends StatelessWidget {
               itemCount: shopList.length,
               itemBuilder: (context, index) {
                 final shop = shopList[index];
-                return Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.w),
-                  child: NearByShopWidget(
-                    shopImage: shop['image']!,
-                    shopName: shop['name']!,
+                return AnimatedProductItem(
+                  index: index,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.w),
+                    child: NearByShopWidget(
+                      shopImage: shop['image']!,
+                      shopName: shop['name']!,
+                    ),
                   ),
                 );
               },
@@ -158,19 +218,24 @@ class WomenCategoryWidget extends StatelessWidget {
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: popularList.length,
+              padding: EdgeInsets.symmetric(horizontal: 12.w),
               itemBuilder: (context, index) {
                 final item = popularList[index];
-                return Padding(
-                  padding: EdgeInsets.only(right: 10.w,bottom: 10),
-                  child: MostPopularCardWidget(
-                    imagePath: item['image'] ?? '',
-                    likeCount: item['likeCount'] ?? '0',
-                    tagText: item['tagText'] ?? '',
+                return AnimatedProductItem(
+                  index: index,
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 10.w, bottom: 10),
+                    child: MostPopularCardWidget(
+                      imagePath: item['image'] ?? '',
+                      likeCount: item['likeCount'] ?? '0',
+                      tagText: item['tagText'] ?? '',
+                    ),
                   ),
                 );
               },
             ),
           ),
+
 
 
           heightBox10,
@@ -220,22 +285,26 @@ class WomenCategoryWidget extends StatelessWidget {
               itemBuilder: (context, index) {
                 final product = summerProducts[index];
 
-                return Padding(
-                  padding: EdgeInsets.only(right: 10.w),
-                  child: SummerProductWidget(
-                    imagePath: product['imagePath'],
-                    brandName: product['brandName'],
-                    productName: product['productName'],
-                    price: product['price'],
-                    discountPrice: product['discountPrice'],
-                    rating: product['rating'],
-                    ratingCount: product['ratingCount'],
-                    initialFavorite: false,
+                return AnimatedProductItem(
+                  index: index,
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 10.w),
+                    child: SummerProductWidget(
+                      imagePath: product['imagePath'],
+                      brandName: product['brandName'],
+                      productName: product['productName'],
+                      price: product['price'],
+                      discountPrice: product['discountPrice'],
+                      rating: product['rating'],
+                      ratingCount: product['ratingCount'],
+                      initialFavorite: false,
+                    ),
                   ),
                 );
               },
             ),
           ),
+
 
 
           heightBox10,
@@ -273,17 +342,38 @@ class WomenCategoryWidget extends StatelessWidget {
             color: AppColors.mainTextColor.withOpacity(0.5),
           ),
 
+          heightBox8,
           //New Product
-          NewProductWidget(
-            imagePath: AppImages.product,
-            brandName: 'Brand A',
-            productName: 'Product A',
-            price: '\$100',
-            discountPrice: '\$80',
-            rating: 4.5,
-            ratingCount: 120,
-            initialFavorite: false,
+          SizedBox(
+            height: 270.h,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: newProducts.length,
+              padding: EdgeInsets.symmetric(horizontal: 12.w),
+              itemBuilder: (context, index) {
+                final product = newProducts[index];
+
+                return AnimatedProductItem(
+                  index: index,
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 10.w),
+                    child: NewProductWidget(
+                      imagePath: product['imagePath'],
+                      brandName: product['brandName'],
+                      productName: product['productName'],
+                      price: product['price'],
+                      discountPrice: product['discountPrice'],
+                      rating: product['rating'],
+                      ratingCount: product['ratingCount'],
+                      initialFavorite: false,
+                    ),
+                  ),
+                );
+              },
+            ),
           ),
+
+
 
 
 

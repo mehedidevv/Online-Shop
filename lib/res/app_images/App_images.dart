@@ -45,7 +45,14 @@ class AppImages {
   static String product = "assets/images/product.png";
   static String summerProduct = "assets/images/summerProduct.png";
   static String summer2 = "assets/images/summer2.png";
+  static String verified = "assets/images/verified.png";
+  static String productDetails = "assets/images/cloths.jpg";
 
+
+  static String reviewImg1 = "assets/images/reviewImg1.png";
+  static String review2 = "assets/images/review2.png";
+  static String review3 = "assets/images/review3.png";
+  static String review4 = "assets/images/review4.png";
 
 
   // =================================Profile icons=============================================

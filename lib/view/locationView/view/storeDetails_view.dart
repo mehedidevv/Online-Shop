@@ -222,8 +222,8 @@ class _StoreDetailsViewState extends State<StoreDetailsView> {
                       index: selectedIndex,
                       children: [
                         WomenCategoryWidget(),
-                        const MenCategoryWidget(),
-                        const KidsCategoryWidget(),
+                         MenCategoryWidget(),
+                         KidsCategoryWidget(),
                       ],
                     ),
                   ],
