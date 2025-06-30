@@ -7,6 +7,7 @@ class CustomText extends StatelessWidget {
   final Color color;
   final FontWeight fontWeight;
   final bool underline;
+  final bool lineThrough;
   final TextDecoration? decoration;
   final Color? decorationColor;
   final double? decorationThickness;
@@ -15,30 +16,40 @@ class CustomText extends StatelessWidget {
   final int? maxLines;
   final String? fontFamily;
   final bool useGoogleFont;
-  final bool isAllCaps; // <-- NEW FLAG
+  final bool isAllCaps;
 
-  CustomText({
+  const CustomText({
     super.key,
     required this.title,
     this.fontSize = 12,
     this.color = Colors.black,
     this.fontWeight = FontWeight.normal,
     this.underline = false,
+    this.lineThrough = false,
     this.decoration,
-    this.decorationColor = Colors.deepOrangeAccent,
-    this.decorationThickness = 2,
+    this.decorationColor = Colors.black, // <-- default black line color
+    this.decorationThickness = 1,
     this.textAlign = TextAlign.start,
     this.overflow,
     this.maxLines,
     this.fontFamily,
     this.useGoogleFont = true,
-    this.isAllCaps = false, // <-- DEFAULT IS false
+    this.isAllCaps = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    final textDecoration =
-        decoration ?? (underline ? TextDecoration.underline : TextDecoration.none);
+    final textDecoration = decoration ??
+        (underline && lineThrough
+            ? TextDecoration.combine([
+          TextDecoration.underline,
+          TextDecoration.lineThrough,
+        ])
+            : underline
+            ? TextDecoration.underline
+            : lineThrough
+            ? TextDecoration.lineThrough
+            : TextDecoration.none);
 
     TextStyle baseStyle;
 
@@ -76,7 +87,7 @@ class CustomText extends StatelessWidget {
     }
 
     return Text(
-      isAllCaps ? title.toUpperCase() : title, // <-- Apply upper case if enabled
+      isAllCaps ? title.toUpperCase() : title,
       maxLines: maxLines,
       overflow: overflow,
       textAlign: textAlign,

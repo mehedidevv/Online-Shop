@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:shop_app/res/app_colors/App_Colors.dart';
 import 'package:shop_app/res/custom_style/custom_size.dart';
 
@@ -8,6 +9,8 @@ import '../../../../../res/custom_widget/custom_text.dart';
 
 import '../../widget/mostPopular_widget.dart';
 import '../../widget/nearByShoop_widget.dart';
+import '../../widget/newProduct_widget.dart';
+import '../../widget/summerProduct_widget.dart';
 
 
 class WomenCategoryWidget extends StatelessWidget {
@@ -35,7 +38,66 @@ class WomenCategoryWidget extends StatelessWidget {
    ];
 
 
-  @override
+   final List<Map<String, dynamic>> summerProducts = [
+     {
+       'imagePath': AppImages.product,
+       'brandName': 'Nike',
+       'productName': 'Air Zoom Pegasus',
+       'price': '\$120',
+       'discountPrice': '\$90',
+       'rating': 4.5,
+       'ratingCount': 25,
+     },
+     {
+       'imagePath': AppImages.summerProduct,
+       'brandName': 'Adidas',
+       'productName': 'Ultraboost 22',
+       'price': '\$150',
+       'discountPrice': '\$110',
+       'rating': 4.8,
+       'ratingCount': 30,
+     },
+     {
+       'imagePath': AppImages.summer2,
+       'brandName': 'Puma',
+       'productName': 'Velocity Nitro',
+       'price': '\$100',
+       'discountPrice': '\$75',
+       'rating': 4.2,
+       'ratingCount': 18,
+     },
+     {
+       'imagePath': AppImages.product,
+       'brandName': 'Nike',
+       'productName': 'Air Zoom Pegasus',
+       'price': '\$120',
+       'discountPrice': '\$90',
+       'rating': 4.5,
+       'ratingCount': 25,
+     },
+     {
+       'imagePath': AppImages.summerProduct,
+       'brandName': 'Adidas',
+       'productName': 'Ultraboost 22',
+       'price': '\$150',
+       'discountPrice': '\$110',
+       'rating': 4.8,
+       'ratingCount': 30,
+     },
+     {
+       'imagePath': AppImages.summer2,
+       'brandName': 'Puma',
+       'productName': 'Velocity Nitro',
+       'price': '\$100',
+       'discountPrice': '\$75',
+       'rating': 4.2,
+       'ratingCount': 18,
+     },
+   ];
+
+
+
+   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
@@ -67,7 +129,7 @@ class WomenCategoryWidget extends StatelessWidget {
           ),
 
           //Most Popular
-          Row(
+           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
 
@@ -90,9 +152,7 @@ class WomenCategoryWidget extends StatelessWidget {
 
             ],
           ),
-
-
-          // Inside your build method or any widget
+          // Most Popular Item
           SizedBox(
             height: 170.h,
             child: ListView.builder(
@@ -112,13 +172,136 @@ class WomenCategoryWidget extends StatelessWidget {
             ),
           ),
 
+
+          heightBox10,
+          //Most Popular
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+
+              CustomText(
+                title: 'Products',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                color: AppColors.mainTextColor,
+              ),
+
+
+
+              CustomText(
+                title: 'View All',
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w500,
+                color: AppColors.mainTextColor.withOpacity(0.5),
+              ),
+
+
+            ],
+          ),
+
+          heightBox10,
+          CustomText(
+            title: 'Super summer sale',
+            fontSize: 11.sp,
+            fontFamily: 'Roboto',
+            fontWeight: FontWeight.w500,
+            color: AppColors.mainTextColor.withOpacity(0.5),
+          ),
+
+          heightBox10,
+
+          //Container For Summer Product
+          SizedBox(
+            height: 270.h,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: summerProducts.length,
+              padding: EdgeInsets.symmetric(horizontal: 12.w),
+              itemBuilder: (context, index) {
+                final product = summerProducts[index];
+
+                return Padding(
+                  padding: EdgeInsets.only(right: 10.w),
+                  child: SummerProductWidget(
+                    imagePath: product['imagePath'],
+                    brandName: product['brandName'],
+                    productName: product['productName'],
+                    price: product['price'],
+                    discountPrice: product['discountPrice'],
+                    rating: product['rating'],
+                    ratingCount: product['ratingCount'],
+                    initialFavorite: false,
+                  ),
+                );
+              },
+            ),
+          ),
+
+
+          heightBox10,
+
+          //All New Product
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+
+              CustomText(
+                title: 'New',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                color: AppColors.mainTextColor,
+              ),
+
+
+
+              CustomText(
+                title: 'View All',
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w500,
+                color: AppColors.mainTextColor.withOpacity(0.5),
+              ),
+
+
+            ],
+          ),
+          heightBox10,
+          CustomText(
+            title: 'You’ve never seen it before!',
+            fontSize: 11.sp,
+            fontFamily: 'Roboto',
+            fontWeight: FontWeight.w500,
+            color: AppColors.mainTextColor.withOpacity(0.5),
+          ),
+
+          //New Product
+          NewProductWidget(
+            imagePath: AppImages.product,
+            brandName: 'Brand A',
+            productName: 'Product A',
+            price: '\$100',
+            discountPrice: '\$80',
+            rating: 4.5,
+            ratingCount: 120,
+            initialFavorite: false,
+          ),
+
+
+
+
+
           heightBox20
+
+
+
+
 
         ],
       ),
     );
   }
 }
+
+
 
 
 

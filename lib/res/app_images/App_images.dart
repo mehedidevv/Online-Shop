@@ -42,6 +42,9 @@ class AppImages {
   static String redHeart = "assets/images/redHeart.png";
   static String mostPopular2 = "assets/images/mostPopular2.png";
   static String mostPopular3 = "assets/images/mostPopular3.png";
+  static String product = "assets/images/product.png";
+  static String summerProduct = "assets/images/summerProduct.png";
+  static String summer2 = "assets/images/summer2.png";
 
 
 

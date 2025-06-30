@@ -7,8 +7,8 @@ class LocationController extends GetxController {
   GoogleMapController? mapController;
 
   final CameraPosition initialCameraPosition = const CameraPosition(
-    target: LatLng(23.8103, 90.4125), // Dhaka
-    zoom: 12,
+    target: LatLng(33.9391, 67.7100), // Dhaka
+    zoom: 10,
   );
 
   void onMapCreated(GoogleMapController controller) {

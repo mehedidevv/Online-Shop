@@ -7,7 +7,7 @@ class NotificationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(text: 'Notification',onBackTap: ()=> Navigator.pop(context),),
+      appBar: CustomAppBar(text: 'Notification'),
       body: Center(
         child: Text('Notification'),
       ),
