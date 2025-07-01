@@ -8,6 +8,7 @@ import 'package:shop_app/res/app_images/App_images.dart';
 import 'package:shop_app/res/custom_style/custom_size.dart';
 import 'package:shop_app/res/custom_widget/RoundTextField.dart';
 import 'package:shop_app/res/custom_widget/custom_text.dart';
+import 'package:shop_app/view/favouriteView/view/favourite_view.dart';
 import 'package:shop_app/view/feedView/view/recommendedProductDetails_view.dart';
 import '../../../../../res/custom_widget/alertDialog_widget.dart';
 import '../../../../../res/helper/sharedHelper.dart';
@@ -105,8 +106,12 @@ class FeedView extends StatelessWidget {
                         ),
                       ],
                     ),
+
                     Obx(() => GestureDetector(
-                      onTap: controller.toggleLike,
+                      onTap:(){
+                        controller.toggleLike();
+                        Get.to(FavouriteView());
+                      },
                       child: Container(
                         height: 30.h,
                         width: 30.h,
@@ -125,6 +130,9 @@ class FeedView extends StatelessWidget {
                         ),
                       ),
                     )),
+
+
+
                   ],
                 ),
 
