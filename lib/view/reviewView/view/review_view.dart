@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:shop_app/res/custom_style/custom_size.dart';
 import 'package:shop_app/res/custom_widget/customAppBar_widget.dart';
 import 'package:shop_app/res/custom_widget/custom_button.dart';
+import 'package:shop_app/view/reviewView/view/writeReview_view.dart';
 import '../../../res/app_colors/App_Colors.dart';
 import '../../../res/app_images/App_images.dart';
 import '../../../res/custom_widget/custom_text.dart';
@@ -109,9 +112,7 @@ class ReviewView extends StatelessWidget {
               child: CustomButton(
                 width: 150.w,
                 title: 'Write Review',
-                onTap: () {
-                  // Your onTap code here
-                },
+                onTap: () => Get.to(() => WriteReviewView()),
               ),
             ),
 
