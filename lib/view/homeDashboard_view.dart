@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/view/profileView/profile_view.dart';
 import '../res/custom_widget/customBottomNavBar_widget.dart';
-import 'addView/add_view.dart';
+import 'addView/view/add_view.dart';
 import 'feedView/view/feed_view.dart';
 import 'locationView/view/location_view.dart';
 import 'notificationView/view/notification_view.dart';
