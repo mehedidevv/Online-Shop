@@ -55,10 +55,13 @@ class AppImages {
   static String review4 = "assets/images/review4.png";
   static String Discount = "assets/images/Discount.png";
   static String Wallet = "assets/images/Wallet.png";
+  static String profileBG = "assets/images/profileBG.jpg";
+  static String profileHeader = "assets/images/profileHeader.png";
+
 
 
   // =================================Profile icons=============================================
-
+  static String myPost = "assets/images/myPost.png";
 
 
 }
