@@ -191,7 +191,7 @@ class FeedView extends StatelessWidget {
                 heightBox10,
 
                 SizedBox(
-                  height: 180.h,
+                  height: 160.h,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: recommendedList.length,

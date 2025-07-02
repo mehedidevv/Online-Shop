@@ -78,7 +78,11 @@ class CustomCenterDialog extends StatelessWidget {
                     ],
 
                     heightBox20,
-                    CustomButton(title: buttonText, onTap: onButtonTap),
+                    CustomButton(
+                       width: 100.w,
+                        title: buttonText,
+                        onTap: onButtonTap),
+
                   ],
                 ),
               ),

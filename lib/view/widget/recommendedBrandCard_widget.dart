@@ -101,7 +101,6 @@ class RecommendedBrandCardWidget extends StatelessWidget {
                         ),
                       ),
 
-                      heightBox5,
 
                       Row(
                         children: [
@@ -140,6 +139,7 @@ class RecommendedBrandCardWidget extends StatelessWidget {
                       ),
 
 
+                      heightBox5,
                       // Action Buttons
                       Row(
                         children: [

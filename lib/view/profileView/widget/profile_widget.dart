@@ -47,7 +47,7 @@ class CustomIconTextWidget extends StatelessWidget {
         heightBox5,
         CustomText(
           title: title,
-          fontSize: 13.sp,
+          fontSize: 12.sp,
           fontWeight: FontWeight.w500,
           color: AppColors.mainTextColor,
         ),

@@ -2,11 +2,16 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shop_app/res/app_images/App_images.dart';
 import 'package:shop_app/res/custom_widget/customAppBar_widget.dart';
+import 'package:shop_app/view/profileView/view/privacyPolicy_view.dart';
+import 'package:shop_app/view/profileView/view/termsAndService_view.dart';
 import '../../../res/app_colors/App_Colors.dart';
 import '../../../res/custom_style/custom_size.dart';
+import '../../../res/custom_widget/alertDialog_widget.dart';
 import '../../../res/custom_widget/custom_text.dart';
 import '../widget/myProfile_widget.dart';
 import '../widget/profile_widget.dart';
@@ -71,7 +76,7 @@ class _ProfileViewState extends State<ProfileView> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                    
+
                         // Profile Image with Edit Icon and Name
                         Center(
                           child: Column(
@@ -132,25 +137,25 @@ class _ProfileViewState extends State<ProfileView> {
                                 fontWeight: FontWeight.w600,
                                 color: const Color(0xFF000000),
                               ),
-                    
+
                             ],
                           ),
                         ),
-                    
+
                         heightBox20,
-                    
+
                         // My Listings
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                    
+
                             CustomText(
                               title: 'My Listings',
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w500,
                               color:  AppColors.mainTextColor,
                             ),
-                    
+
                             Icon(Icons.arrow_forward_ios,
                               size: 14.sp,
                               color: AppColors.mainTextColor,)
@@ -166,46 +171,46 @@ class _ProfileViewState extends State<ProfileView> {
                               title: 'Profile',
                               onTap: ()=> print('Profile'),
                             ),
-                    
+
                             CustomIconTextWidget(
                               imagePath: AppImages.heartProfile,
                               title: 'Likes',
                               onTap: ()=> print('Profile'),
                             ),
-                    
-                    
+
+
                             CustomIconTextWidget(
                               imagePath: AppImages.sizeIcon,
                               title: 'Size',
                               onTap: ()=> print('Profile'),
                             ),
-                    
-                    
+
+
                             CustomIconTextWidget(
                               imagePath: AppImages.visibilityIcon,
                               title: 'Recent Views',
                               onTap: ()=> print('Profile'),
                             ),
-                    
-                    
+
+
                           ],
                         ),
-                    
-                    
-                    
+
+
+
                         heightBox20,
                         //Settings
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                    
+
                             CustomText(
                               title: 'Settings',
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w500,
                               color:  AppColors.mainTextColor,
                             ),
-                    
+
                             Icon(Icons.arrow_forward_ios,
                               size: 14.sp,
                               color: AppColors.mainTextColor,)
@@ -221,33 +226,33 @@ class _ProfileViewState extends State<ProfileView> {
                               title: 'Share',
                               onTap: ()=> print('Profile'),
                             ),
-                    
+
                             CustomIconTextWidget(
                               imagePath: AppImages.faq,
                               title: 'FAQ',
                               onTap: ()=> print('Profile'),
                             ),
-                    
-                    
+
+
                             CustomIconTextWidget(
                               imagePath: AppImages.support,
                               title: 'Support',
                               onTap: ()=> print('Profile'),
                             ),
-                    
-                    
+
+
                             CustomIconTextWidget(
                               imagePath: AppImages.rewards,
                               title: 'Rewards',
                               onTap: ()=> print('Profile'),
                             ),
-                    
-                    
+
+
                           ],
                         ),
-                    
+
                         heightBox30,
-                    
+
                         //My Post
                         CustomProfileRowWidget(
                           imagePath: AppImages.myPost,
@@ -257,8 +262,8 @@ class _ProfileViewState extends State<ProfileView> {
                             print('My Post tapped');
                           },
                         ),
-                    
-                    
+
+
                         //About Forager
                         heightBox20,
                         CustomProfileRowWidget(
@@ -269,8 +274,8 @@ class _ProfileViewState extends State<ProfileView> {
                             print('My Post tapped');
                           },
                         ),
-                    
-                    
+
+
                         //Change Password
                         heightBox20,
                         CustomProfileRowWidget(
@@ -281,33 +286,29 @@ class _ProfileViewState extends State<ProfileView> {
                             print('My Post tapped');
                           },
                         ),
-                    
-                    
+
+
                         //Terms of Conditions
                         heightBox20,
                         CustomProfileRowWidget(
                           imagePath: AppImages.termsCondition,
                           title: 'Terms of Conditions',
                           textColor: AppColors.mainTextColor,
-                          onTap: () {
-                            print('My Post tapped');
-                          },
+                          onTap: ()=>Get.to(TermsAndServiceView()),
                         ),
-                    
-                    
+
+
                         //Privacy Policy
                         heightBox20,
                         CustomProfileRowWidget(
                           imagePath: AppImages.privacy,
                           title: 'Privacy Policy',
                           textColor: AppColors.mainTextColor,
-                          onTap: () {
-                            print('My Post tapped');
-                          },
+                          onTap: ()=>Get.to(PrivacyPolicyView()),
                         ),
-                    
-                    
-                    
+
+
+
                         //Log Out
                         heightBox20,
                         CustomProfileRowWidget(
@@ -315,10 +316,21 @@ class _ProfileViewState extends State<ProfileView> {
                           title: 'Log Out',
                           textColor:Colors.red,
                           onTap: () {
-                            print('My Post tapped');
+                            showDialog(
+                              context: context,
+                              barrierDismissible: false,
+                              builder: (_) =>
+                                  CustomCenterDialog(
+                                    title: 'Log Out',
+                                    subTitle: 'You will be logged out from this device',
+                                    buttonText: 'Log Out',
+                                    onButtonTap: () => Navigator.pop(context),
+                                  ),
+                            );
                           },
                         ),
-                    
+
+
                       ],
                     ),
                   ),

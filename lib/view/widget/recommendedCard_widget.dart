@@ -20,8 +20,8 @@ class RecommendedCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 180.h,
-      width: 300.w, // Add fixed width for horizontal ListView
+      height: 160.h,
+      width: 300.w,
       decoration: BoxDecoration(
         gradient: AppColors.primaryGradient,
         borderRadius: BorderRadius.circular(24),
