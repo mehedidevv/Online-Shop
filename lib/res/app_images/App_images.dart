@@ -62,6 +62,21 @@ class AppImages {
 
   // =================================Profile icons=============================================
   static String myPost = "assets/images/myPost.png";
+  static String heartProfile = "assets/images/heartProfile.png";
+  static String profileIcon = "assets/images/profileIcon.png";
+  static String sizeIcon = "assets/images/sizeIcon.png";
+  static String visibilityIcon = "assets/images/visibilityIcon.png";
+  static String faq = "assets/images/faq.png";
+  static String rewards = "assets/images/rewards.png";
+  static String support = "assets/images/support.png";
+  static String About = "assets/images/About.png";
+  static String termsCondition = "assets/images/termsCondition.png";
+  static String privacy = "assets/images/privacy.png";
+  static String logout = "assets/images/logout.png";
+  static String lockIcon = "assets/images/lockIcon.png";
+
+
+
 
 
 }
