@@ -19,7 +19,6 @@ class StoreDetailsView extends StatefulWidget {
 
 class _StoreDetailsViewState extends State<StoreDetailsView> {
   int selectedIndex = 0;
-
   final List<String> tabs = ['Women', 'Men', 'Kids'];
 
   @override

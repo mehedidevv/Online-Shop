@@ -10,8 +10,8 @@ import 'package:shop_app/res/custom_widget/customCheckBox_widget.dart';
 import 'package:shop_app/res/custom_widget/custom_button.dart';
 import 'package:shop_app/res/custom_widget/custom_text.dart';
 import 'package:shop_app/view/authenticationView/signIn_view.dart';
-import '../../../../../res/app_images/App_images.dart';
-import '../../../../authenticationView/controller/signUp_controller.dart';
+import '../../../res/app_images/App_images.dart';
+import '../../authenticationView/controller/signUp_controller.dart';
 
 class ChangePasswordView extends StatelessWidget {
   ChangePasswordView({super.key});

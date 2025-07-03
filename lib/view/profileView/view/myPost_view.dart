@@ -4,8 +4,8 @@ import 'package:shop_app/res/app_colors/App_Colors.dart';
 import 'package:shop_app/res/app_images/App_images.dart';
 import 'package:shop_app/res/custom_widget/customAppBar_widget.dart';
 
-import '../../../../../res/custom_widget/alertDialog_widget.dart';
-import '../../../widget/singlePost_widget.dart';
+import '../../../res/custom_widget/alertDialog_widget.dart';
+import '../widget/singlePost_widget.dart';
 
 class MyPostView extends StatelessWidget {
   MyPostView({super.key});

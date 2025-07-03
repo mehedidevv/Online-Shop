@@ -78,6 +78,7 @@ class AppImages {
   static String deleteIcon = "assets/images/deleteIcon.png";
   static String myPostImage = "assets/images/myPostImage.png";
   static String myPost2 = "assets/images/myPost2.png";
+  static String supportImage = "assets/images/supportImage.png";
 
 
 

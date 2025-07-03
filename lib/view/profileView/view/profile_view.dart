@@ -8,13 +8,17 @@ import 'package:image_picker/image_picker.dart';
 import 'package:shop_app/res/app_images/App_images.dart';
 import 'package:shop_app/res/custom_widget/customAppBar_widget.dart';
 import 'package:shop_app/view/profileView/view/myListiningView/view/myLikes_view.dart';
+import 'package:shop_app/view/profileView/view/myListiningView/view/myRecent_view.dart';
 import 'package:shop_app/view/profileView/view/myListiningView/view/mySize_view.dart';
-import 'package:shop_app/view/profileView/view/settingsView/view/aboutForager_view.dart';
-import 'package:shop_app/view/profileView/view/settingsView/view/changePassword_view.dart';
-import 'package:shop_app/view/profileView/view/settingsView/view/myPost_view.dart';
+import 'package:shop_app/view/profileView/view/aboutForager_view.dart';
+import 'package:shop_app/view/profileView/view/changePassword_view.dart';
+import 'package:shop_app/view/profileView/view/myPost_view.dart';
 import 'package:shop_app/view/profileView/view/myListiningView/view/myProfile_view.dart';
-import 'package:shop_app/view/profileView/view/settingsView/view/privacyPolicy_view.dart';
-import 'package:shop_app/view/profileView/view/settingsView/view/termsAndService_view.dart';
+import 'package:shop_app/view/profileView/view/privacyPolicy_view.dart';
+import 'package:shop_app/view/profileView/view/settingsView/view/faq_view.dart';
+import 'package:shop_app/view/profileView/view/settingsView/view/rewards_view.dart';
+import 'package:shop_app/view/profileView/view/settingsView/view/support_view.dart';
+import 'package:shop_app/view/profileView/view/termsAndService_view.dart';
 import '../../../res/app_colors/App_Colors.dart';
 import '../../../res/custom_style/custom_size.dart';
 import '../../../res/custom_widget/alertDialog_widget.dart';
@@ -195,7 +199,7 @@ class _ProfileViewState extends State<ProfileView> {
                             CustomIconTextWidget(
                               imagePath: AppImages.visibilityIcon,
                               title: 'Recent Views',
-                              onTap: ()=> print('Profile'),
+                              onTap: ()=> Get.to(MyRecentView()),
                             ),
 
 
@@ -236,21 +240,21 @@ class _ProfileViewState extends State<ProfileView> {
                             CustomIconTextWidget(
                               imagePath: AppImages.faq,
                               title: 'FAQ',
-                              onTap: ()=> print('Profile'),
+                              onTap: ()=> Get.to(FaqView()),
                             ),
 
 
                             CustomIconTextWidget(
                               imagePath: AppImages.support,
                               title: 'Support',
-                              onTap: ()=> print('Profile'),
+                              onTap: ()=> Get.to(SupportView()),
                             ),
 
 
                             CustomIconTextWidget(
                               imagePath: AppImages.rewards,
                               title: 'Rewards',
-                              onTap: ()=> print('Profile'),
+                              onTap: ()=> Get.to(RewardsView()),
                             ),
 
 
