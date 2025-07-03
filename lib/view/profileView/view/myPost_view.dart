@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_app/res/app_colors/App_Colors.dart';
 import 'package:shop_app/res/app_images/App_images.dart';
 import 'package:shop_app/res/custom_widget/customAppBar_widget.dart';
+import 'package:shop_app/view/widget/animatedProduct_widget.dart';
 
 import '../../../res/custom_widget/alertDialog_widget.dart';
 import '../widget/singlePost_widget.dart';
@@ -93,28 +94,31 @@ class MyPostView extends StatelessWidget {
             itemBuilder: (context, index) {
               final post = postList[index];
               return Padding(
-                padding: const EdgeInsets.only(bottom: 10.0),
-                child: SinglePostWidget(
-                  imagePath: post['image']!,
-                  title: post['title']!,
-                  subtitle: post['subtitle']!,
-                  originalPrice: post['originalPrice']!,
-                  discountedPrice: post['discountedPrice']!,
-                  onTapEdit: () {
-                    print("Edit tapped for ${post['title']}");
-                  },
-                  onTapDelete: () {
-                    showDialog(
-                      context: context,
-                      barrierDismissible: false,
-                      builder: (_) => CustomCenterDialog(
-                        title: 'Are you Want to Delete!',
-                        subTitle: 'Item will Be Deleted From Your Device.',
-                        buttonText: 'Delete',
-                        onButtonTap: () => Navigator.pop(context),
-                      ),
-                    );
-                  },
+                padding:  EdgeInsets.only(bottom: 10.0),
+                child: AnimatedProductItem(
+                  index: index,
+                  child: SinglePostWidget(
+                    imagePath: post['image']!,
+                    title: post['title']!,
+                    subtitle: post['subtitle']!,
+                    originalPrice: post['originalPrice']!,
+                    discountedPrice: post['discountedPrice']!,
+                    onTapEdit: () {
+                      print("Edit tapped for ${post['title']}");
+                    },
+                    onTapDelete: () {
+                      showDialog(
+                        context: context,
+                        barrierDismissible: false,
+                        builder: (_) => CustomCenterDialog(
+                          title: 'Are you Want to Delete!',
+                          subTitle: 'Item will Be Deleted From Your Device.',
+                          buttonText: 'Delete',
+                          onButtonTap: () => Navigator.pop(context),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               );
             },

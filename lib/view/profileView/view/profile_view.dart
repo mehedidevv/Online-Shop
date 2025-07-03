@@ -23,6 +23,7 @@ import '../../../res/app_colors/App_Colors.dart';
 import '../../../res/custom_style/custom_size.dart';
 import '../../../res/custom_widget/alertDialog_widget.dart';
 import '../../../res/custom_widget/custom_text.dart';
+import '../../../res/helper/sharedHelper.dart';
 import '../widget/myProfile_widget.dart';
 import '../widget/profile_widget.dart';
 
@@ -234,7 +235,18 @@ class _ProfileViewState extends State<ProfileView> {
                             CustomIconTextWidget(
                               imagePath: AppImages.share,
                               title: 'Share',
-                              onTap: ()=> print('Profile'),
+                              onTap: (){
+                                ShareHelper.shareCardData(
+                                  title: 'Proenza Schouler',
+                                  description: 'T-Shirts & Long Pants',
+                                  category: 'Dress',
+                                  color: 'Black',
+                                  store: 'T J Maxx',
+                                  size: 'Small',
+                                  price: '\$55.55',
+                                  imageAssetPath: AppImages.CardImage,
+                                );
+                              },
                             ),
 
                             CustomIconTextWidget(
