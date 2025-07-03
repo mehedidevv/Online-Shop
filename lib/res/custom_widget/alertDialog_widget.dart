@@ -36,7 +36,7 @@ class CustomCenterDialog extends StatelessWidget {
           clipBehavior: Clip.none,
           children: [
             Container(
-              padding: EdgeInsets.all(14.w),
+              padding: EdgeInsets.all(10.w),
               decoration: BoxDecoration(
                 color: AppColors.whiteColor,
                 borderRadius: BorderRadius.circular(30.r),

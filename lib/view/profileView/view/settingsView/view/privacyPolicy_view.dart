@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/res/custom_style/custom_size.dart';
 import 'package:shop_app/res/custom_widget/custom_text.dart';
 
-import '../../../res/app_colors/App_Colors.dart';
-import '../../../res/custom_widget/customAppBar_widget.dart';
+import '../../../../../res/app_colors/App_Colors.dart';
+import '../../../../../res/custom_widget/customAppBar_widget.dart';
 
 class PrivacyPolicyView extends StatelessWidget {
   const PrivacyPolicyView({super.key});

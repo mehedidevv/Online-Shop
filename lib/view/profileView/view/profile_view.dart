@@ -7,8 +7,14 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shop_app/res/app_images/App_images.dart';
 import 'package:shop_app/res/custom_widget/customAppBar_widget.dart';
-import 'package:shop_app/view/profileView/view/privacyPolicy_view.dart';
-import 'package:shop_app/view/profileView/view/termsAndService_view.dart';
+import 'package:shop_app/view/profileView/view/myListiningView/view/myLikes_view.dart';
+import 'package:shop_app/view/profileView/view/myListiningView/view/mySize_view.dart';
+import 'package:shop_app/view/profileView/view/settingsView/view/aboutForager_view.dart';
+import 'package:shop_app/view/profileView/view/settingsView/view/changePassword_view.dart';
+import 'package:shop_app/view/profileView/view/settingsView/view/myPost_view.dart';
+import 'package:shop_app/view/profileView/view/myListiningView/view/myProfile_view.dart';
+import 'package:shop_app/view/profileView/view/settingsView/view/privacyPolicy_view.dart';
+import 'package:shop_app/view/profileView/view/settingsView/view/termsAndService_view.dart';
 import '../../../res/app_colors/App_Colors.dart';
 import '../../../res/custom_style/custom_size.dart';
 import '../../../res/custom_widget/alertDialog_widget.dart';
@@ -169,20 +175,20 @@ class _ProfileViewState extends State<ProfileView> {
                             CustomIconTextWidget(
                               imagePath: AppImages.profileIcon,
                               title: 'Profile',
-                              onTap: ()=> print('Profile'),
+                              onTap: ()=> Get.to(MyProfileView()),
                             ),
 
                             CustomIconTextWidget(
                               imagePath: AppImages.heartProfile,
                               title: 'Likes',
-                              onTap: ()=> print('Profile'),
+                              onTap: ()=> Get.to(MyLikesView()),
                             ),
 
 
                             CustomIconTextWidget(
                               imagePath: AppImages.sizeIcon,
                               title: 'Size',
-                              onTap: ()=> print('Profile'),
+                              onTap: ()=> Get.to(MySizeView()),
                             ),
 
 
@@ -258,9 +264,7 @@ class _ProfileViewState extends State<ProfileView> {
                           imagePath: AppImages.myPost,
                           title: 'My Post',
                           textColor: AppColors.mainTextColor,
-                          onTap: () {
-                            print('My Post tapped');
-                          },
+                          onTap: () => Get.to(MyPostView())
                         ),
 
 
@@ -270,9 +274,7 @@ class _ProfileViewState extends State<ProfileView> {
                           imagePath: AppImages.About,
                           title: 'About Forager',
                           textColor: AppColors.mainTextColor,
-                          onTap: () {
-                            print('My Post tapped');
-                          },
+                          onTap: ()=> Get.to(AboutForagerView()),
                         ),
 
 
@@ -282,9 +284,7 @@ class _ProfileViewState extends State<ProfileView> {
                           imagePath: AppImages.lockIcon,
                           title: 'Change Password',
                           textColor: AppColors.mainTextColor,
-                          onTap: () {
-                            print('My Post tapped');
-                          },
+                          onTap: ()=> Get.to(ChangePasswordView())
                         ),
 
 

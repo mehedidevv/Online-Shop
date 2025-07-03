@@ -221,7 +221,7 @@ class _StoreDetailsViewState extends State<StoreDetailsView> {
                     IndexedStack(
                       index: selectedIndex,
                       children: [
-                        WomenCategoryWidget(),
+                         WomenCategoryWidget(),
                          MenCategoryWidget(),
                          KidsCategoryWidget(),
                       ],

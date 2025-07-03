@@ -74,6 +74,10 @@ class AppImages {
   static String privacy = "assets/images/privacy.png";
   static String logout = "assets/images/logout.png";
   static String lockIcon = "assets/images/lockIcon.png";
+  static String editIcon = "assets/images/editIcon.png";
+  static String deleteIcon = "assets/images/deleteIcon.png";
+  static String myPostImage = "assets/images/myPostImage.png";
+  static String myPost2 = "assets/images/myPost2.png";
 
 
 

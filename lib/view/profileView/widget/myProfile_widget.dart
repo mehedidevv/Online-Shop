@@ -26,15 +26,15 @@ class CustomProfileRowWidget extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(
-            height: 24.h,
-            width: 24.w,
+            height: 20.h,
+            width: 20.w,
             child: Image.asset(imagePath),
           ),
           widthBox20,
           CustomText(
             title: title,
             fontSize: 12.sp,
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.w400,
             color: textColor,
           ),
           const Spacer(),

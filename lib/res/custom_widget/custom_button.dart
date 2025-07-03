@@ -12,6 +12,7 @@ class CustomButton extends StatelessWidget {
   final void Function()? onTap;
   final bool isLoading;
   final double width;
+  final double? height; // ✅ NEW
   final double padding_vertical;
   final double borderRadius;
   final double fontSize;
@@ -26,6 +27,7 @@ class CustomButton extends StatelessWidget {
     required this.onTap,
     this.isLoading = false,
     this.width = double.infinity,
+    this.height, // ✅ NEW
     this.padding_vertical = 12.0,
     this.borderRadius = 10.0,
     this.border,
@@ -42,6 +44,11 @@ class CustomButton extends StatelessWidget {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
         alignment: Alignment.center,
+        width: width,
+        height: height, // ✅ Use height if provided
+        padding: height == null
+            ? EdgeInsets.symmetric(vertical: padding_vertical)
+            : null, // Ignore padding if height is used
         decoration: BoxDecoration(
           gradient: gradient ??
               const LinearGradient(
@@ -55,8 +62,6 @@ class CustomButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(borderRadius),
           border: border,
         ),
-        width: width,
-        padding: EdgeInsets.symmetric(vertical: padding_vertical),
         child: isLoading
             ? const Center(
           child: SpinKitDualRing(
@@ -70,10 +75,10 @@ class CustomButton extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CustomText(
-                 title:  title,
+                  title: title,
                   fontSize: fontSize,
                   fontWeight: FontWeight.w600,
-                  color: AppColors.whiteColor,
+                  color: titleColor ?? AppColors.whiteColor,
                 ),
               ],
             ),
@@ -81,4 +86,5 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
+
 

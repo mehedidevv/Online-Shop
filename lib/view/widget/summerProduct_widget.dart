@@ -42,7 +42,7 @@ class _SummerProductWidgetState extends State<SummerProductWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 120.w,
+      width: 170.w,
       decoration: BoxDecoration(
         color: AppColors.whiteColor,
       ),
@@ -53,7 +53,6 @@ class _SummerProductWidgetState extends State<SummerProductWidget> {
           Stack(
             children: [
               Container(
-                height: 170.h,
                 width: 120.w,
                 decoration: BoxDecoration(
                   color: AppColors.whiteColor,
@@ -62,7 +61,7 @@ class _SummerProductWidgetState extends State<SummerProductWidget> {
                   borderRadius: BorderRadius.circular(8.r),
                   child: Image.asset(
                     widget.imagePath,
-                    height: 170.h,
+                    height: 150.h,
                     width: 120.w,
                     fit: BoxFit.cover,
                   ),
