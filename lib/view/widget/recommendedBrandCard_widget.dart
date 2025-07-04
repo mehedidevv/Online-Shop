@@ -167,8 +167,8 @@ class RecommendedBrandCardWidget extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 30.h,
-        width: 30.w,
+        height: 25.h,
+        width: 25.w,
         decoration: BoxDecoration(
           color: const Color(0xFFFAF4EC),
           shape: BoxShape.circle,
@@ -179,7 +179,7 @@ class RecommendedBrandCardWidget extends StatelessWidget {
             assetPath,
             height: 20.h,
             width: 20.w,
-            color: AppColors.primaryDeep,
+            color: AppColors.appBarTextColor,
           ),
         ),
       ),
@@ -195,7 +195,7 @@ class RecommendedBrandCardWidget extends StatelessWidget {
           title: label,
           fontSize: 12.sp,
           fontFamily: 'Roboto',
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.w400,
           color: AppColors.mainTextColor,
         ),
         SizedBox(width: 6.w),
@@ -204,7 +204,7 @@ class RecommendedBrandCardWidget extends StatelessWidget {
             title: value,
             fontSize: 11.sp,
             fontFamily: 'Roboto',
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.w400,
             color: AppColors.mainTextColor.withOpacity(0.5),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,

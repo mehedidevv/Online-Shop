@@ -38,23 +38,23 @@ class RecommendedCardWidget extends StatelessWidget {
                 children: [
                   CustomText(
                     title: title,
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w600,
-                    color: const Color(0xFFFDFDFD),
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w500,
+                    color:  Color(0xFFFDFDFD),
                   ),
                   SizedBox(height: 5.h),
                   CustomText(
                     title: subtitle,
                     fontSize: 11.sp,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w400,
                     color: const Color(0xFFFDFDFD),
                   ),
                   SizedBox(height: 10.h),
                   GestureDetector(
                     onTap: onTap,
                     child: Container(
-                      width: 80.w,
-                      padding: EdgeInsets.all(10.w),
+                      width: 70.w,
+                      padding: EdgeInsets.all(5.w),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.r),
                         color: AppColors.whiteColor,

@@ -50,7 +50,7 @@ class _FilterViewState extends State<FilterView> {
   int selectedColorIndex = -1;
 
   // Sizes with multiple selection support
-  final List<String> sizeOptions = ['XS', 'S', 'M', 'L', 'XL'];
+  final List<String> sizeOptions = ['XS', 'S', 'M', 'L', 'XL','XXL','N/A'];
   Set<int> selectedSizes = {};
 
   final List<String> categories = [

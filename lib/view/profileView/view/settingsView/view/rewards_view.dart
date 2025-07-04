@@ -15,7 +15,7 @@ class RewardsView extends StatelessWidget {
   final List<CircularStackEntry> data = <CircularStackEntry>[
     CircularStackEntry(
       <CircularSegmentEntry>[
-        CircularSegmentEntry(500.0, Colors.red[300]!, rankKey: 'Q1'),
+        CircularSegmentEntry(500.0, Color(0XFF), rankKey: 'Q1'),
         CircularSegmentEntry(1000.0, Colors.green[300]!, rankKey: 'Q2'),
         CircularSegmentEntry(2000.0, Colors.blue[300]!, rankKey: 'Q3'),
       ],

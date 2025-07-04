@@ -32,7 +32,7 @@ class _RecommendedProductDetailsViewState extends State<RecommendedProductDetail
   int selectedColorIndex = -1;
 
   // Sizes with multiple selection support
-  final List<String> sizeOptions = ['XS', 'S', 'M', 'L', 'XL'];
+  final List<String> sizeOptions = ['XS', 'S', 'M', 'L', 'XL','XXl','N/A'];
 
   Set<int> selectedSizes = {};
 

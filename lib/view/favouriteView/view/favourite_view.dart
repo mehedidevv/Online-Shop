@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/res/app_images/App_images.dart';
 import 'package:shop_app/res/custom_style/custom_size.dart';
+import 'package:shop_app/view/widget/animatedProduct_widget.dart';
 import '../../../res/app_colors/App_Colors.dart';
 import '../../../res/custom_widget/customAppBar_widget.dart';
 import '../widget/singleFavourite_widget.dart';
@@ -111,19 +112,22 @@ class FavouriteView extends StatelessWidget {
                     final item = favouriteItems[index];
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 15),
-                      child: SingleFavouriteItemWidget(
-                        name: item['name'],
-                        color: item['color'],
-                        size: item['size'],
-                        price: item['price'],
-                        rating: item['rating'],
-                        ratingCount: item['ratingCount'],
-                        imagePath: item['imagePath'],
-                        isNetwork: item['isNetwork'],
-                        onRemoveTap: () {
-                          print('Remove tapped for ${item['name']}');
+                      child: AnimatedProductItem(
+                        index: index,
+                        child: SingleFavouriteItemWidget(
+                          name: item['name'],
+                          color: item['color'],
+                          size: item['size'],
+                          price: item['price'],
+                          rating: item['rating'],
+                          ratingCount: item['ratingCount'],
+                          imagePath: item['imagePath'],
+                          isNetwork: item['isNetwork'],
+                          onRemoveTap: () {
+                            print('Remove tapped for ${item['name']}');
 
-                        },
+                          },
+                        ),
                       ),
                     );
                   },

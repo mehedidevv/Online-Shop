@@ -41,7 +41,7 @@ class CustomProfileRowWidget extends StatelessWidget {
           Icon(
             Icons.arrow_forward_ios,
             size: 14.sp,
-            color: AppColors.mainTextColor,
+            color: AppColors.appBarTextColor,
           ),
         ],
       ),

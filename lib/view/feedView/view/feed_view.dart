@@ -10,6 +10,7 @@ import 'package:shop_app/res/custom_widget/RoundTextField.dart';
 import 'package:shop_app/res/custom_widget/custom_text.dart';
 import 'package:shop_app/view/favouriteView/view/favourite_view.dart';
 import 'package:shop_app/view/feedView/view/recommendedProductDetails_view.dart';
+import 'package:shop_app/view/widget/animatedProduct_widget.dart';
 import '../../../../../res/custom_widget/alertDialog_widget.dart';
 import '../../../../../res/helper/sharedHelper.dart';
 import '../../controller/likeButtonController.dart';
@@ -170,9 +171,12 @@ class FeedView extends StatelessWidget {
                       final shop = shopList[index];
                       return Padding(
                         padding: EdgeInsets.symmetric(horizontal: 8.w),
-                        child: NearByShopWidget(
-                          shopImage: shop['image']!,
-                          shopName: shop['name']!,
+                        child: AnimatedProductItem(
+                          index: index,
+                          child: NearByShopWidget(
+                            shopImage: shop['image']!,
+                            shopName: shop['name']!,
+                          ),
                         ),
                       );
                     },
@@ -180,44 +184,41 @@ class FeedView extends StatelessWidget {
                 ),
 
 
-                // Recommended Horizontal Cards
-                CustomText(
-                  title: 'Recommended for you',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.mainTextColor,
-                ),
-
-                heightBox10,
-
-                SizedBox(
-                  height: 160.h,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: recommendedList.length,
-                    itemBuilder: (context, index) {
-                      final card = recommendedList[index];
-                      return Padding(
-                        padding: EdgeInsets.only(right: 12.w),
-                        child: RecommendedCardWidget(
-                          title: card['title']!,
-                          subtitle: card['subtitle']!,
-                          imagePath: card['imagePath']!,
-                          onTap: () => debugPrint('Tapped card ${index + 1}'),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-
-                heightBox20,
+                //
+                // heightBox10,
+                //
+                // SizedBox(
+                //   height: 160.h,
+                //   child: ListView.builder(
+                //     scrollDirection: Axis.horizontal,
+                //     itemCount: recommendedList.length,
+                //     itemBuilder: (context, index) {
+                //       final card = recommendedList[index];
+                //       return Padding(
+                //         padding: EdgeInsets.only(right: 12.w),
+                //         child: AnimatedProductItem(
+                //           index: index,
+                //           child: RecommendedCardWidget(
+                //             title: card['title']!,
+                //             subtitle: card['subtitle']!,
+                //             imagePath: card['imagePath']!,
+                //             onTap: () => debugPrint('Tapped card ${index + 1}'),
+                //           ),
+                //         ),
+                //       );
+                //     },
+                //   ),
+                // ),
+                //
+                // heightBox20,
 
                 // Explore Brands Row
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     CustomText(
-                      title: 'Explore Unique Brands and Items!',
+                      title: 'Recommended For You',
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                       color: AppColors.mainTextColor,
@@ -225,8 +226,8 @@ class FeedView extends StatelessWidget {
                     GestureDetector(
                       onTap: () => Get.to(FilterView()),
                       child: Container(
-                        height: 30,
-                        width: 30,
+                        height: 40,
+                        width: 40,
                         decoration: BoxDecoration(
                           color: const Color(0xFFFAF4EC),
                           shape: BoxShape.circle,
@@ -258,41 +259,44 @@ class FeedView extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: EdgeInsets.only(bottom: 10.h),
-                      child: RecommendedBrandCardWidget(
-                        onTap: ()=>Get.to(RecommendedProductDetailsView()),
-                        onExclamatoryTap: () {
-                          showDialog(
-                            context: context,
-                            barrierDismissible: false,
-                            builder: (_) =>
-                                CustomCenterDialog(
-                                  title: 'What do you want to report?',
-                                  subTitle: 'Report Reason',
-                                  textFieldHint: 'Type  here...',
-                                  buttonText: 'Submit',
-                                  onButtonTap: () => Navigator.pop(context),
-                                ),
-                          );
-                        },
+                      child: AnimatedProductItem(
+                        index: index,
+                        child: RecommendedBrandCardWidget(
+                          onTap: ()=>Get.to(RecommendedProductDetailsView()),
+                          onExclamatoryTap: () {
+                            showDialog(
+                              context: context,
+                              barrierDismissible: false,
+                              builder: (_) =>
+                                  CustomCenterDialog(
+                                    title: 'What do you want to report?',
+                                    subTitle: 'Report Reason',
+                                    textFieldHint: 'Type  here...',
+                                    buttonText: 'Submit',
+                                    onButtonTap: () => Navigator.pop(context),
+                                  ),
+                            );
+                          },
 
-                        onShareTap: () {
-                          ShareHelper.shareCardData(
-                            title: 'Proenza Schouler',
-                            description: 'T-Shirts & Long Pants',
-                            category: 'Dress',
-                            color: 'Black',
-                            store: 'T J Maxx',
-                            size: 'Small',
-                            price: '\$55.55',
-                            imageAssetPath: AppImages.CardImage,
-                          );
-                        },
-                        onLikeTap: () => print('Like tapped on card $index'),
-                        onCouldntFindTap: () => print('Couldn’t Find tapped on card $index'),
-                        onBroughtTap: () => print('Brought tapped on card $index'),
+                          onShareTap: () {
+                            ShareHelper.shareCardData(
+                              title: 'Proenza Schouler',
+                              description: 'T-Shirts & Long Pants',
+                              category: 'Dress',
+                              color: 'Black',
+                              store: 'T J Maxx',
+                              size: 'Small',
+                              price: '\$55.55',
+                              imageAssetPath: AppImages.CardImage,
+                            );
+                          },
+                          onLikeTap: () => print('Like tapped on card $index'),
+                          onCouldntFindTap: () => print('Couldn’t Find tapped on card $index'),
+                          onBroughtTap: () => print('Brought tapped on card $index'),
 
 
 
+                        ),
                       ),
                     );
                   },

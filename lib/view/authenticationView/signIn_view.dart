@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:shop_app/res/app_colors/App_Colors.dart';
 import 'package:shop_app/res/custom_style/custom_size.dart';
 import 'package:shop_app/res/custom_widget/RoundTextField.dart';
 import 'package:shop_app/res/custom_widget/customCheckBox_widget.dart';
@@ -24,6 +25,7 @@ class SignInView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.whiteColor,
       body: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 14,vertical: 14),

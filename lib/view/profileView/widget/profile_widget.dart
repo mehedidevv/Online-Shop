@@ -39,7 +39,7 @@ class CustomIconTextWidget extends StatelessWidget {
                 imagePath,
                 height: 20.h,
                 width: 20.w,
-                color: AppColors.primaryDeep,
+                color: AppColors.appBarTextColor,
               ),
             ),
           ),
